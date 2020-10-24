@@ -43,6 +43,12 @@
 
         <Button x:Name="ShowButton" Content="Show" HorizontalAlignment="Left" Margin="198,136,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="198,309,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="$" HorizontalAlignment="Left" Margin="278,26,0,0" VerticalAlignment="Top"/>
+        <Label Content="$" HorizontalAlignment="Left" Margin="278,52,0,0" VerticalAlignment="Top"/>
+        <Label Content="$" HorizontalAlignment="Left" Margin="278,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="$" HorizontalAlignment="Left" Margin="278,247,0,0" VerticalAlignment="Top"/>
+        <Label Content="$" HorizontalAlignment="Left" Margin="278,278,0,0" VerticalAlignment="Top"/>
+        <Label Content="%" HorizontalAlignment="Left" Margin="278,216,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

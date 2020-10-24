@@ -96,12 +96,88 @@ namespace MarketStore.ViewModel
         public MainWindowViewModel(MainWindow mainWindow)
         {
             this.window = mainWindow;
-            Turnover = "Tu sam";
-            Total = "123";
-            Discount = "asdas";
-            DiscountRate = "fsdsa";
-            PurchaseValue = "asasd";
-            PurchaseValueOutput = "asa basa";
+            //BronzeCard();
+            //SilverCard();
+            GoldCard();
+        }
+
+        public void BronzeCard()
+        {
+            Turnover = "0";
+            PurchaseValue = "150";
+
+            if(Int32.Parse(Turnover) < 100)
+            {
+                DiscountRate = "0";
+            } else if(Int32.Parse(Turnover) >= 100 && Int32.Parse(Turnover) < 300)
+            {
+                DiscountRate = "1";
+            } else if(Int32.Parse(Turnover) >= 300)
+            {
+                DiscountRate = "2,5";
+            }
+            else
+            {
+
+            }
+
+            PurchaseValueOutput = PurchaseValue;
+
+            Discount = (Int32.Parse(PurchaseValue) * Double.Parse(DiscountRate) / 100).ToString();
+
+            Total = (Int32.Parse(PurchaseValue) - Double.Parse(Discount)).ToString();
+        }
+
+        public void SilverCard()
+        {
+            Turnover = "600";
+            PurchaseValue = "850";
+
+            if (Int32.Parse(Turnover) < 300)
+            {
+                DiscountRate = "2";
+            }
+            else if (Int32.Parse(Turnover) >= 300)
+            {
+                DiscountRate = "3,5";
+            }
+            else
+            {
+
+            }
+
+            PurchaseValueOutput = PurchaseValue;
+
+            Discount = (Int32.Parse(PurchaseValue) * Double.Parse(DiscountRate) / 100).ToString();
+
+            Total = (Int32.Parse(PurchaseValue) - Double.Parse(Discount)).ToString();
+        }
+
+        public void GoldCard()
+        {
+            Turnover = "1500";
+            PurchaseValue = "1300";
+            DiscountRate = "2";
+
+            int discountCount = 2;
+            int tempTurnover = Int32.Parse(Turnover);
+
+            while (discountCount < 10)
+            {
+                if (tempTurnover > 0 )
+                {
+                    discountCount++;
+                    tempTurnover -= 100;
+                }
+            }
+
+            DiscountRate = discountCount.ToString();
+
+            PurchaseValueOutput = PurchaseValue;
+
+            Discount = (Int32.Parse(PurchaseValue) * Double.Parse(DiscountRate) / 100).ToString();
+
+            Total = (Int32.Parse(PurchaseValue) - Double.Parse(Discount)).ToString();
         }
 
         #region OnPropertyChanged
