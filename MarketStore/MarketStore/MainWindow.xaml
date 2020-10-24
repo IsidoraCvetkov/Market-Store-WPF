@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MarketStore"
         mc:Ignorable="d"
-        Title="Market Sotre" Height="450" Width="800" Icon="Images/market-store-icon.png" Background="#FFA2D677" >
+        Title="Market Sotre" Height="450" Width="800" 
+        WindowStartupLocation="CenterScreen" 
+        Icon="Images/market-store-icon.png" Background="#FFA2D677" >
     <Grid Background="#FFCAAED4">
         <TabControl HorizontalAlignment="Left" Height="244" Margin="405,87,0,0" VerticalAlignment="Top" Width="212">
             <TabItem Header="Bronze">
@@ -18,10 +20,11 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
+        
         <Label x:Name="LabelTurnover" Content="Turnover" HorizontalAlignment="Left" Height="28" Margin="10,24,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="LabelPurchaseValue" Content="Purchase value" HorizontalAlignment="Left" Height="36" Margin="10,55,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="TextBoxTurnover" Text="" HorizontalAlignment="Left" Height="26" Margin="115,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <TextBox x:Name="TextBoxPurchaseValue" HorizontalAlignment="Left" Height="26" Margin="115,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxTurnover" Text="{Binding Path=Turnover, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="26" Margin="115,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxPurchaseValue" Text="{Binding Path=PurchaseValue, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="26" Margin="115,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
         <RadioButton x:Name="RadioButtonBronze" Content="Bronze" HorizontalAlignment="Left" Margin="125,101,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="RadioButtonSliver" Content="Sliver" HorizontalAlignment="Left" Margin="183,101,0,0" VerticalAlignment="Top"/>
@@ -33,10 +36,10 @@
         <Label x:Name="LabelTotal" Content="Total" HorizontalAlignment="Left" Margin="10,278,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelCardType" Content="Card type" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="TextBoxPurchaseValueOutput" Text="" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <TextBox x:Name="TextBoxDiscountRate" Text="" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <TextBox x:Name="TextBoxDiscount" Text="" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <TextBox x:Name="TextBoxTotal" Text="" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxPurchaseValueOutput" Text="{Binding Path=PurchaseValueOutput, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxDiscountRate" Text="{Binding Path=DiscountRate, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxDiscount" Text="{Binding Path=Discount, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="TextBoxTotal" Text="{Binding Path=Total, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HorizontalAlignment="Left" Height="26" Margin="115,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
 
         <Button x:Name="ShowButton" Content="Show" HorizontalAlignment="Left" Margin="198,136,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="198,309,0,0" VerticalAlignment="Top" Width="75"/>
